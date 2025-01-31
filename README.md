@@ -38,7 +38,7 @@ users:
     shell: /bin/bash
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
     ssh_authorized_keys:
-      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINklMnnoZ2rtGQIloHWEEv3sUr4k/wEqfQhR+4JHfs7i acit4640_terraform
+      - <ssh-key-here>
 
 package_update: true
 package_upgrade: true
