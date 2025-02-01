@@ -138,6 +138,13 @@ resource "aws_instance" "web" {
 *  we used file() since we want to specify which file our user data is coming from.
 * we also added `vpc_security_group_ids = [aws_security_group.web.id]` to add our vpc security groups, and its important to use this version as we are using vpcs for our case.
 
+Once we are done editing the `main.tf`
+* it is important to validate and plan it to check for any errors to the file, and do a dry run of it as well.
+* `terraform validate` to check if the configurations are correct
+* `terraform plan` to do a dry run
+
+If there are no errors found, `terraform apply` to build our ec2 instance.
+
 
 Sources: 
 * https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc
