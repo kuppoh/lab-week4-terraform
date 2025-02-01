@@ -1,0 +1,14 @@
+#cloud-config
+users:
+  - name: web
+    primary_group: web
+    groups: wheel
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINklMnnoZ2rtGQIloHWEEv3sUr4k/wEqfQhR+4JHfs7i acit4640_terraform
+package_update: true
+package_upgrade: true
+packages:
+  - nginx
+  - nmap

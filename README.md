@@ -57,5 +57,35 @@ Sources:
 
 ### Task 2
 ---
+Now edit and complete the `main.tf`:
+
+To enable dns:
+* `enable_dns_hostnames = true`
+    * as the default value is set to `false`
+
+Then to add project name using local, refer to your `locals` block:
+```tf
+
+locals {
+    project_name = "lab_week_4"
+}
+
+resource "aws_vpc" "web" {
+  cidr_block           = "10.0.0.0/16"
+	enable_dns_hostnames = true
+
+  tags = {
+    Name    = local.project_name
+  }
+}
+```
+
+
+
+Sources: 
+* https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc
+* https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table_association
+* https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
+
 
 
